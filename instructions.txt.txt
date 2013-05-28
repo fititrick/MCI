@@ -1,0 +1,2 @@
+Execute 1.html with google chrome (if possible). 
+Then you can test the secuence of make a phone call, like diagrams than we have sent. 
