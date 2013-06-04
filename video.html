@@ -4,13 +4,42 @@
 	<meta charset="utf-8">
 	<title>MYLE CONTACTS</title>
 	<script src="./css/jquery-1.9.1.min.js"></script>
+	<script language="JavaScript" type="text/JavaScript">
+		function leerGET(){ 
+			var cadGET = location.search.substr(1,location.search.length); 
+			return cadGET; 
+		} 
+		
+		function modificarVisibilidad(id){
+			with (document.getElementById(id).style){
+				(visibility == "visible")? visibility = "hidden":visibility = "visible";
+			}
+		}
+		function mostrarCapa(){
+		var variable = leerGET();
+		if(variable=="family")
+			document.getElementById("family").style.visibility = 'visible';
+			document.getElementById("friends").style.visibility = 'hidden';
+		else{
+			document.getElementById("family").style.visibility = 'hidden';
+			document.getElementById("friends").style.visibility = 'visible';
+			}		
+		}
+		function cambiar(){
+			document.getElementById("botonBack").style.visibility = 'hidden';
+			document.getElementById("botonEnd").style.visibility = 'visible';
+			document.getElementById(7).style.visibility = 'hidden';
+			document.getElementById(6).style.visibility = 'visible';
+}
+
+</script>
 	<style type="text/css">	
 		
 		/*
 			la diferencia es que si pones lo siguiente en relative apareceria abajo, si lo haces en absolute, es respcto a la pagina
 		*/
 		#myle{
-			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(149,149,149,1)), color-stop(38%,rgba(13,13,13,1)), color-stop(50%,rgba(1,1,1,1)), color-stop(62%,rgba(10,10,10,1)), color-stop(76%,rgba(78,78,78,1)), color-stop(87%,rgba(56,56,56,1)), color-stop(100%,rgba(27,27,27,1)));
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(149,149,149,1)), color-stop(38%,rgba(13,13,13,1)), color-stop(50%,rgba(1,1,1,1)), color-stop(62%,rgba(10,10,10,1)), color-stop(76%,rgba(78,78,78,1)), color-stop(87%,rgba(56,56,56,1)), color-stop(100%,rgba(27,27,27,1)));
 			position: absolute;
 			top:0;
 			left:0;
@@ -107,6 +136,20 @@
 			-webkit-animation-timing-function: linear;
 			-webkit-animation-iteration-count: 1;
 		}
+		#menu{
+			position: absolute;
+			top:38%;
+			left:10%;
+			width: 12%; 
+			height: 20%;
+		}
+		#submenu{
+			position: absolute;
+			top:38%;
+			left:78%;
+			width: 13%; 
+			height: 20%;
+		}
 		@-webkit-keyframes photoMove{
 			0%{
 				left: 500px;
@@ -119,9 +162,28 @@
 		
 	</style>
 </head>
-<body>
+<body onload="mostrarCapa()">
 	<section id="secMyle">
 		<img id="myle" src="./img/myle.png">
+		<section id="menu">
+			<div align="center"><a HREF="1.html" ><font FACE="arial" SIZE=5 COLOR=red >MENU</font></a></div>
+			<br>
+			<div align="left"><a HREF="phone.html" ><font FACE="arial" SIZE=4 COLOR="077827" >PHONE CALL</font></a></div>
+			<div align="center"><a HREF="lastCalls.html" ><font FACE="arial" SIZE=3 COLOR="077827" >LAST CALLS</font></a></div>
+			<div align="center"><a HREF="agenda.html" ><font FACE="arial" SIZE=2 COLOR="077827" >AGENDA</font></a></div>
+			<div align="right"><a HREF="fFriends.html" ><font FACE="arial" SIZE=1 COLOR="077827" >FOOTBALL FRIENDS</font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >FREE TIME</font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >LENGUAGES</font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >OTHER OPTIONS</font></a></div>
+		</section>
+		<section id="submenu">
+			<div align="center" id="friends"><a HREF="fFriends.html" ><font FACE="arial" SIZE=5 COLOR=red style="text-align: center">FOOTBALL FRIENDS</font></a></div>
+			<div align="center" id="family"><a HREF="fFriends.html" ><font FACE="arial" SIZE=5 COLOR=red style="text-align: center">FAMILY</font></a></div>
+			<BR>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >RECORD VOICE MSJ. </font></a></div>
+			<div align="left"><a HREF="video.html?friends" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >RECORD VIDEO MSJ. </font></a></div>
+			
+		</section>
 		<section id="bottons">
 		<img id="botonPhone" width="100%" height="100%" src="./img/video.png" /> </button>
 		<img id="botonPhone1" width="100%" height="100%" src="./img/cam.png" /> </button>	

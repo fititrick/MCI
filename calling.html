@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Animation</title>
+	<script src="./js/libs/jquery-1.6.2.min.js"></script>
 	<style type="text/css">
 		
 		
@@ -9,7 +10,7 @@
 			la diferencia es que si pones lo siguiente en relative apareceria abajo, si lo haces en absolute, es respcto a la pagina
 		*/
 		#myle{
-			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(149,149,149,1)), color-stop(38%,rgba(13,13,13,1)), color-stop(50%,rgba(1,1,1,1)), color-stop(62%,rgba(10,10,10,1)), color-stop(76%,rgba(78,78,78,1)), color-stop(87%,rgba(56,56,56,1)), color-stop(100%,rgba(27,27,27,1)));
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(149,149,149,1)), color-stop(38%,rgba(13,13,13,1)), color-stop(50%,rgba(1,1,1,1)), color-stop(62%,rgba(10,10,10,1)), color-stop(76%,rgba(78,78,78,1)), color-stop(87%,rgba(56,56,56,1)), color-stop(100%,rgba(27,27,27,1)));
 			position: absolute;
 			top:0;
 			left:0;
@@ -23,10 +24,17 @@
 			width: 54%; 
 			height: 60%;
 		}
+		.foto{
+			position: absolute;
+			top:0%;
+			left:23%;
+			width: 54%; 
+			height: 60%;
+			visibility:hidden;
+		}
 		.button {
 		   border-top: 1% solid #f5f5f5;
 		   background: #E20825;
-		  
 		   width:49%;
 		   height:35%;
 		   -webkit-border-radius: 40%;
@@ -50,8 +58,8 @@
 		   background: -moz-linear-gradient(top, #3e779d, #c5ccd1);
 		   background: -ms-linear-gradient(top, #3e779d, #c5ccd1);
 		   background: -o-linear-gradient(top, #3e779d, #c5ccd1);
-		   width:100%;
-		   height:65%;
+		   width:50%;
+		   height:35%;
 		   -webkit-border-radius: 40%;
 		   -moz-border-radius: 40%;
 		   border-radius: 40%;
@@ -74,7 +82,33 @@
 		   border-top-color: #c7e3f5;
 		   background: #c7e3f5;
 		   }
-
+		#end{
+			top:75%;
+			left:25%;
+		}
+		#botonEnd{
+			position: absolute;
+			top:65%;
+			left:54%;
+			width: 45%; 
+			height: 35%;
+		}
+		#botonBack{
+			position: absolute;
+			top:65%;
+			left:54%;
+			width: 45%; 
+			height: 35%;
+		}
+		
+		.funcion{
+		position: absolute;
+			top:65%;
+			left:1%;
+			width: 45%; 
+			height: 35%;
+		}
+		
 		/*
 			diferencias entre explorer, opera, mozilla y chrome
 		
@@ -86,13 +120,63 @@
 		
 		
 	</style>
+	<script language="JavaScript" type="text/JavaScript">
+function leerGET(){ 
+	var cadGET = location.search.substr(1,location.search.length); 
+	var aux = cadGET.split("=");
+	return aux[1]; 
+} 
+
+function modificarVisibilidad(id){
+	with (document.getElementById(id).style){
+		(visibility == "visible")? visibility = "hidden":visibility = "visible";
+	}
+}
+function mostrarCapa(){
+var variable = leerGET();
+document.getElementById(variable).style.visibility = 'visible';
+
+document.getElementById(6).style.visibility = 'hidden';
+document.getElementById(7).style.visibility = 'visible';
+document.getElementById("botonBack").style.visibility = 'visible';
+document.getElementById("botonEnd").style.visibility = 'hidden';
+
+}
+function cambiar(){
+	document.getElementById("botonBack").style.visibility = 'hidden';
+	document.getElementById("botonEnd").style.visibility = 'visible';
+	document.getElementById(7).style.visibility = 'hidden';
+	document.getElementById(6).style.visibility = 'visible';
+}
+
+</script>
 </head>
-<body>
-	<section id="secMyle">
-		<img id="myle" src="./img/myle.png">
-		<section id="bottons">
-		<button class="button2" ><h1>CALLING</h1><img width="50%" height="75%" src="./img/telefono.gif" /></button>
-		<center style="width:100% ;height:100%;" onclick=window.location="phone.html"><button class="button" style="center" onclick=w.location="phone.html">END PHONE CALL<img  width="55%" height="80%" src="./img/endPhone.png " /> </button></center>
+<body onload="mostrarCapa()">
+<section id="secMyle">
+	<img id="myle" src="./img/myle.png">
+	<section id="bottons">
+		<div align="center">
+			<div id="1" class="foto">
+			<h1>CALLING TO EVA?</h1><img width="80%" height="80%" src="./img/eva.png">
+			</div>
+			<div id="2" class="foto">
+				
+			<H1>CALLING TO ROBERT?</h1><img width="80%" height="80%" src="./img/old man.jpg">
+			</div>
+			<div id="3" class="foto">
+			<H1>CALLING TO ROBERT?</h1><img width="80%" height="80%" src="./img/otto.png"> 
+			</div>
+			<div id="4" class="foto">
+			<H1>CALLING TO THE PETERSON FAMILY?</h1><img width="80%" height="80%" src="./img/others.png">
+			</div>
+			<div id="5" class="foto">
+			<H1>CALLING TO XIAOMEI?</h1><img width="80%" height="80%" src="./img/china.jpg">
+			</div>
+		</div>
+		<button id="6" class="funcion" ><h1>CALLING</h1><img width="50%" height="55%" src="./img/telefono.gif" /></button>
+		<button id="7"class="funcion" onclick="cambiar()"><h1>CALL</h1><img width="50%" height="55%" src="./img/phone.png" /></button>
+		<button id="botonBack" class="button" onclick=window.location="contacts.html">BACK<img  width="90%" height="80%" src="./img/back.png " /> </button>
+		<button id="botonEnd" class="button" onclick=window.location="contacts.html">END PHONE CALL<img  width="90%" height="80%" src="./img/endPhone.png " /> </button>
 		</section>
 	</section>
 </body>
