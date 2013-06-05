@@ -2,7 +2,6 @@
 <html>
 <head>
 	<title>Animation</title>
-	<script src="./js/libs/jquery-1.6.2.min.js"></script>
 	<style type="text/css">
 		
 		
@@ -126,6 +125,11 @@ function leerGET(){
 	var aux = cadGET.split("=");
 	return aux[1]; 
 } 
+function leerProcedence(){ 
+	var cadGET = location.search.substr(1,location.search.length); 
+	var aux = cadGET.split("=");
+	return aux[2]; 
+} 
 
 function modificarVisibilidad(id){
 	with (document.getElementById(id).style){
@@ -135,6 +139,7 @@ function modificarVisibilidad(id){
 function mostrarCapa(){
 var variable = leerGET();
 document.getElementById(variable).style.visibility = 'visible';
+
 
 document.getElementById(6).style.visibility = 'hidden';
 document.getElementById(7).style.visibility = 'visible';
@@ -148,6 +153,13 @@ function cambiar(){
 	document.getElementById(7).style.visibility = 'hidden';
 	document.getElementById(6).style.visibility = 'visible';
 }
+function irse(){
+		if(leerProcedence()=="contacts")
+			window.location="contacts.html";
+		else
+			window.location="lastCalls.html";
+}
+
 
 </script>
 </head>
@@ -164,7 +176,7 @@ function cambiar(){
 			<H1>CALLING TO ROBERT?</h1><img width="80%" height="80%" src="./img/old man.jpg">
 			</div>
 			<div id="3" class="foto">
-			<H1>CALLING TO ROBERT?</h1><img width="80%" height="80%" src="./img/otto.png"> 
+			<H1>CALLING TO OTTO?</h1><img width="80%" height="80%" src="./img/otto.png"> 
 			</div>
 			<div id="4" class="foto">
 			<H1>CALLING TO THE PETERSON FAMILY?</h1><img width="80%" height="80%" src="./img/others.png">
@@ -175,8 +187,8 @@ function cambiar(){
 		</div>
 		<button id="6" class="funcion" ><h1>CALLING</h1><img width="50%" height="55%" src="./img/telefono.gif" /></button>
 		<button id="7"class="funcion" onclick="cambiar()"><h1>CALL</h1><img width="50%" height="55%" src="./img/phone.png" /></button>
-		<button id="botonBack" class="button" onclick=window.location="contacts.html">BACK<img  width="90%" height="80%" src="./img/back.png " /> </button>
-		<button id="botonEnd" class="button" onclick=window.location="contacts.html">END PHONE CALL<img  width="90%" height="80%" src="./img/endPhone.png " /> </button>
+		<button id="botonBack" class="button" onclick="irse()">BACK<img  width="90%" height="80%" src="./img/back.png " /> </button>
+		<button id="botonEnd" class="button" onclick="irse()">END PHONE CALL<img  width="90%" height="80%" src="./img/endPhone.png " /> </button>
 		</section>
 	</section>
 </body>
