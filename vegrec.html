@@ -16,6 +16,20 @@
 			width: 100%; 
 			height: 100%;
 		}
+		#menu{
+			position: absolute;
+			top:38%;
+			left:10%;
+			width: 12%; 
+			height: 20%;
+		}
+		#submenu{
+			position: absolute;
+			top:38%;
+			left:78%;
+			width: 12%; 
+			height: 20%;
+		}
 		#bottons{
 			position: absolute;
 			top:38%;
@@ -71,11 +85,26 @@
 <body>
 	<section id="secMyle">
 		<img id="myle" src="./img/myle.png">
+		<section id="menu">
+			<div align="center"><a HREF="1.html" ><font FACE="arial" SIZE=5 COLOR=red >MENU</font></a></div>
+			<br>
+			<div align="left"><a HREF="phone.html" ><font FACE="arial" SIZE=4 COLOR="077827" >RECIPES</font></a></div>
+			<div align="left"><a HREF="recipes.html" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >VEGETARIAN</font></a></div>
+			<div align="left"><font FACE="arial" SIZE=2 COLOR="DCE2DE" >MEAT & FISH</font></a></div>
+			<div align="left"><font FACE="arial" SIZE=2 COLOR="DCE2DE" >LEGUME & PASTA</font></a></div>
+		</section>
+		<section id="submenu">
+			<div align="center"><a HREF="lang.html" ><font FACE="arial" SIZE=4 COLOR=red style="text-align: center">RECIPES</font></a></div>
+			<BR>
+			<div align="left"><a HREF="vegrec.html"><font FACE="arial" SIZE=3 COLOR="DCE2DE" >RECIPE 1</font></a></div>
+			<div align="left"><a HREF="vegrec.html"><font FACE="arial" SIZE=3 COLOR="DCE2DE" >RECIPE 2</font></a></div>
+			<div align="left"><a HREF="vegrec.html"><font FACE="arial" SIZE=3 COLOR="DCE2DE" >RECIPE 3</font></a></div>
+		</section>
 		<section id="bottons">
-		<button class="button" value='PHONE CALL'>PHONE CALL<img width="80%" height="70%" src="./img/telefono.png" /></button>
-		<button class="button" value='RECIPIES' onclick=window.location="recipes.html" >RECIPES<img width="80%" height="70%" src="./img/receta.png" /> </button>
-		<button class="button" value='ENGLISH' onclick=window.location="lang.html">LANGUAGES<img  width="80%" height="80%" src="./img/globe.png " /> </button>
-			<button id="Other" class="button">OTHER OPTIONS<img  width="90%" height="90%" src="./img/things.png " />
+		<button class="button" value='RECIPE1' >RECIPE 1<img width="80%" height="70%" src="./img/recipe1.jpg" /></button>
+		<button class="button" value='RECIPE2' >RECIPE 2<img width="80%" height="70%" src="./img/recipe2.jpg" /> </button>
+		<button class="button" value='RECIPE3' >RECIPE 3<img  width="80%" height="80%" src="./img/recipe3.jpg" /> </button>
+			<button id="Other" class="button" onclick=window.location="recipes.html" >BACK<img  width="90%" height="90%" src="./img/back.png" />
 			</button>
 			
 		</section>
