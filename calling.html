@@ -141,8 +141,8 @@ var variable = leerGET();
 document.getElementById(variable).style.visibility = 'visible';
 
 
-document.getElementById(6).style.visibility = 'hidden';
-document.getElementById(7).style.visibility = 'visible';
+document.getElementById(10).style.visibility = 'hidden';
+document.getElementById(11).style.visibility = 'visible';
 document.getElementById("botonBack").style.visibility = 'visible';
 document.getElementById("botonEnd").style.visibility = 'hidden';
 
@@ -150,14 +150,18 @@ document.getElementById("botonEnd").style.visibility = 'hidden';
 function cambiar(){
 	document.getElementById("botonBack").style.visibility = 'hidden';
 	document.getElementById("botonEnd").style.visibility = 'visible';
-	document.getElementById(7).style.visibility = 'hidden';
-	document.getElementById(6).style.visibility = 'visible';
+	document.getElementById(11).style.visibility = 'hidden';
+	document.getElementById(10).style.visibility = 'visible';
 }
 function irse(){
 		if(leerProcedence()=="contacts")
 			window.location="contacts.html";
-		else
+		if(leerProcedence()=="last")
 			window.location="lastCalls.html";
+		if(leerProcedence()=="friends")
+			window.location="fFriends.html";
+		if(leerProcedence()=="doctors")
+			window.location="doctors.html";
 }
 
 
@@ -172,7 +176,6 @@ function irse(){
 			<h1>CALLING TO EVA?</h1><img width="80%" height="80%" src="./img/eva.png">
 			</div>
 			<div id="2" class="foto">
-				
 			<H1>CALLING TO ROBERT?</h1><img width="80%" height="80%" src="./img/old man.jpg">
 			</div>
 			<div id="3" class="foto">
@@ -184,9 +187,21 @@ function irse(){
 			<div id="5" class="foto">
 			<H1>CALLING TO XIAOMEI?</h1><img width="80%" height="80%" src="./img/china.jpg">
 			</div>
+			<div id="6" class="foto">
+			<H1>CALLING TO MARK?</h1><img width="80%" height="80%" src="./img/contact.png">
+			</div>
+			<div id="7" class="foto">
+			<H1>CALLING TO CONSTANTIN?</h1><img width="80%" height="80%" src="./img/contact.png">
+			</div>
+			<div id="8" class="foto">
+			<H1>CALLING TO CHRISTIAN?</h1><img width="80%" height="80%" src="./img/contact.png">
+			</div>
+			<div id="9" class="foto">
+			<H1>CALLING TO NICK?</h1><img width="80%" height="80%" src="./img/contact.png">
+			</div>
 		</div>
-		<button id="6" class="funcion" ><h1>CALLING</h1><img width="50%" height="55%" src="./img/telefono.gif" /></button>
-		<button id="7"class="funcion" onclick="cambiar()"><h1>CALL</h1><img width="50%" height="55%" src="./img/phone.png" /></button>
+		<button id="10" class="funcion" ><h1>CALLING</h1><img width="50%" height="55%" src="./img/telefono.gif" /></button>
+		<button id="11"class="funcion" onclick="cambiar()"><h1>CALL</h1><img width="50%" height="55%" src="./img/phone.png" /></button>
 		<button id="botonBack" class="button" onclick="irse()">BACK<img  width="90%" height="80%" src="./img/back.png " /> </button>
 		<button id="botonEnd" class="button" onclick="irse()">END PHONE CALL<img  width="90%" height="80%" src="./img/endPhone.png " /> </button>
 		</section>

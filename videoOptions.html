@@ -2,9 +2,44 @@
 <html>
 <head>
 	<title>MYLE MENU</title>
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+	<link rel="stylesheet" href="./css/jquery.mobile-1.3.1.css">
+	<script src="./js/jquery.mobile-1.3.1.js"></script>
+	<script src="./js/jquery.js"></script>
+	<script src="./js/jquery.mobile-1.3.1.min.js"></script>
+	<script language="JavaScript" type="text/JavaScript">
+		function leerGET(){ 
+			var cadGET = location.search.substr(1,location.search.length); 
+			var aux = cadGET.split("=");
+			return aux[1]; 
+		} 
+		window.onload = function(){
+				var variable = leerGET();
+				if(variable=="friends"){
+					document.getElementById("friends").style.visibility = 'visible';
+					
+					document.getElementById("friends1").style.visibility = 'visible';
+				}
+				else{
+					document.getElementById("doctors").style.visibility = 'visible';
+					
+					document.getElementById("doctors1").style.visibility = 'visible';
+					
+				}
+		}
+		function irse(){
+			if(leerGET()=="doctors")
+				window.location="video.html?var=doctors";
+			else
+				window.location="video.html?var=friends";
+		}
+		function avanzar(){
+			if(leerGET()=="doctors")
+				window.location="videoContacts.html?var=doctors";
+			else
+				window.location="videoContacts.html?var=friends";
+		}
+
+</script>
 	<style type="text/css">
 		
 		
@@ -29,24 +64,54 @@
 		.a{
 			text-align:center;
 		}
-		
-		/*
-			diferencias entre explorer, opera, mozilla y chrome
-		
-		-ms
-		-o
-		-moz
-		-webkit
-		
-		<div class="verticalLine"> <br></div>
-		*/
-		
-		
+		#menu{
+			position: absolute;
+			top:38%;
+			left:10%;
+			width: 12%; 
+			height: 20%;
+		}
+		#submenu{
+			position: absolute;
+			top:38%;
+			left:78%;
+			width: 13%; 
+			height: 20%;
+		}
+		.ocultos{
+			visibility:hidden;
+		}
 	</style>
 </head>
 <body>
 	<section id="secMyle">
 		<img id="myle" src="./img/myle.png">
+		<section id="menu">
+			<div align="center"><a HREF="1.html" ><font FACE="arial" SIZE=5 COLOR=red >MENU</font></a></div>
+			<br>
+			<div align="left"><a HREF="phone.html" ><font FACE="arial" SIZE=4 COLOR="077827" >PHONE CALL</font></a></div>
+			<div align="center"><a HREF="lastCalls.html" ><font FACE="arial" SIZE=3 COLOR="077827" >LAST CALLS</font></a></div>
+			<div align="center"><a HREF="agenda.html" ><font FACE="arial" SIZE=2 COLOR="077827" >AGENDA</font></a></div>
+			<div align="right" class="ocultos" id="friends1"><a HREF="fFriends.html" ><font FACE="arial" SIZE=1 COLOR="077827" >FOOTBALL FRIENDS</font></a></div>
+			<div align="right" class="ocultos" id="doctors1"><a HREF="doctors.html" ><font FACE="arial" SIZE=1 COLOR="077827" >DOCTORS</font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >FREE TIME</font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >LENGUAGES</font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >OTHER OPTIONS</font></a></div>
+		</section>
+		<section id="submenu">
+			<div align="center" class="ocultos" id="friends"><a HREF="fFriends.html" ><font FACE="arial" SIZE=5 COLOR=red style="text-align: center">FOOTBALL FRIENDS</font></a></div>
+			<div align="center" class="ocultos" id="doctors"><a HREF="doctors.html" ><font FACE="arial" SIZE=5 COLOR=red style="text-align: center">DOCTORS</font></a></div>
+			<BR>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >RECORD VOICE MSJ. </font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=4 COLOR="077827" >RECORD VIDEO MSJ. </font></a></div>
+			<div align="center"><a HREF="" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >DELETE VIDEO </font></a></div>
+			<div align="center"><a HREF="" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >SAVE VIDEO </font></a></div>
+			<div align="center"><a HREF="" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >WATCH VIDEO </font></a></div>
+			<div align="center"><a HREF="" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >SEND VIDEO </font></a></div>
+			
+		</section>
+		
+		
 		<section id="bottons">
 			<div >
 				<div data-role="header"><h1>VIDEO OPTIONS</h1></div>
@@ -60,10 +125,10 @@
 	        	<a onclick=window.location="" data-role="button" data-icon="check" data-iconpos="bottom">WATCH<br>Video</a>
 	        </div>	
 	        <div style="position: absolute; top:50%;left:61%;width: 30%;height: 40%; margin-top: -1.2em;">
-	        	<a onclick=window.location="videoContacts.html" data-role="button" data-icon="gear" data-iconpos="bottom">SEND<br>Video</a>
+	        	<a onclick="avanzar()"data-role="button" data-icon="gear" data-iconpos="bottom">SEND<br>Video</a>
 	        </div>	
 	        <div style="position: absolute; top:80%;left:71%;width: 25%;height: 35%; margin-top: -1.2em;">
-	        	<a onclick=window.location="fFriends.html" data-role="button" data-icon="back" data-theme="e" data-iconpos="bottom">BACK</a>
+	        	<a onclick="irse()" data-role="button" data-icon="back" data-theme="e" data-iconpos="bottom">BACK</a>
 			       
 		    </div>
 		</section>

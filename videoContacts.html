@@ -2,9 +2,10 @@
 <html>
 <head>
 	<title>MYLE MENU</title>
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+	<link rel="stylesheet" href="./css/jquery.mobile-1.3.1.css">
+	<script src="./js/jquery.mobile-1.3.1.js"></script>
+	<script src="./js/jquery.js"></script>
+	<script src="./js/jquery.mobile-1.3.1.min.js"></script>
 	<style type="text/css">
 		
 		
@@ -39,6 +40,24 @@
 			left:20%;
 			width: 60%; 
 			height: 60%;
+			visibility:hidden;
+		}
+		#menu{
+			position: absolute;
+			top:38%;
+			left:10%;
+			width: 12%; 
+			height: 20%;
+		}
+		#submenu{
+			position: absolute;
+			top:38%;
+			left:78%;
+			width: 13%; 
+			height: 20%;
+		}
+		.ocultos{
+			visibility:hidden;
 		}
 		
 		/*
@@ -59,9 +78,35 @@
 <div data-role="page" id="tres" data-theme="a">
 	<section id="secMyle">
 		<img id="myle" src="./img/myle.png">
+		<section id="menu">
+			<div align="center"><a HREF="1.html" ><font FACE="arial" SIZE=5 COLOR=red >MENU</font></a></div>
+			<br>
+			<div align="left"><a HREF="phone.html" ><font FACE="arial" SIZE=4 COLOR="077827" >PHONE CALL</font></a></div>
+			<div align="center"><a HREF="lastCalls.html" ><font FACE="arial" SIZE=3 COLOR="077827" >LAST CALLS</font></a></div>
+			<div align="center"><a HREF="agenda.html" ><font FACE="arial" SIZE=2 COLOR="077827" >AGENDA</font></a></div>
+			<div align="right" class="ocultos" id="friends1"><a HREF="fFriends.html" ><font FACE="arial" SIZE=1 COLOR="077827" >FOOTBALL FRIENDS</font></a></div>
+			<div align="right" class="ocultos" id="doctors1"><a HREF="doctors.html" ><font FACE="arial" SIZE=1 COLOR="077827" >DOCTORS</font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >FREE TIME</font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >LENGUAGES</font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >OTHER OPTIONS</font></a></div>
+		</section>
+		<section id="submenu">
+			<div align="center" class="ocultos" id="friends"><a HREF="fFriends.html" ><font FACE="arial" SIZE=5 COLOR=red style="text-align: center">FOOTBALL FRIENDS</font></a></div>
+			<div align="center" class="ocultos" id="doctors"><a HREF="doctors.html" ><font FACE="arial" SIZE=5 COLOR=red style="text-align: center">DOCTORS</font></a></div>
+			<BR>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >RECORD VOICE MSJ. </font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=4 COLOR="077827" >RECORD VIDEO MSJ. </font></a></div>
+			<div align="center"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >DELETE VIDEO </font></a></div>
+			<div align="center"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >SAVE VIDEO </font></a></div>
+			<div align="center"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >WATCH VIDEO </font></a></div>
+			<div align="center"><a HREF="" ><font FACE="arial" SIZE=3 COLOR="077827" >SEND VIDEO </font></a></div>
+			
+		</section>
+		
+		
 		<section id="bottons">
 			<div id="div">
-				<div data-role="header" data-theme="d"><h1>FOOTBALL FRIENDS</h1></div>
+				<div data-role="header" data-theme="d"><h1>CONTACTS TO SEND</h1></div>
 			<li id="last" data-role="fieldcontain">
 	        	<fieldset data-role="controlgroup">
 					<input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
@@ -80,11 +125,11 @@
 			
 	        		
 	        <div style="position: absolute; top:80%;left:71%;width: 25%;height: 35%; margin-top: -1.2em;">
-	        	<a onclick=window.location="videoOptions.html" data-role="button" data-icon="back" data-theme="e" data-iconpos="bottom">BACK</a>
+	        	<a onclick="irse()"  data-role="button" data-icon="back" data-theme="e" data-iconpos="bottom">BACK</a>
 			       
 		    </div>
 		     <div style="position: absolute; top:80%;left:11%;width: 25%;height: 35%; margin-top: -1.2em;">
-	        	<a  id="botsend" href="#dos" data-role="button" data-icon="back" data-theme="c" data-iconpos="bottom">SEND</a>
+	        	<a  id="botsend" href="#dos" data-role="button" data-icon="check" data-theme="c" data-iconpos="bottom">SEND</a>
 		    	</div>
 		    </div>
 		</section>
@@ -94,25 +139,78 @@
 	<section id="secMyle">
 		<img id="myle" src="./img/myle.png">
 		<section id="bottons">
-			<div id="sending" class="photo" data-role="header" data-theme="d"><img style="width: 100%; height: 100%" src="./img/sending.gif"></div>
-			<div id="sent" class="photo" data-role="header" data-theme="d"><img style="width: 100%; height: 100%" src="./img/sent.png"></div>
-			
-			
-			<div style="position: absolute; top:80%;left:33%;width: 33%;height: 35%; margin-top: -1.2em;">
-	        	<a onclick=window.location="1.html" data-role="button" data-icon="check" data-theme="e" data-iconpos="bottom">ACCEPT</a>
-			       
-		    </div>
+			<div id="div2" align="center">
+				<div id="sure" class="foto">
+				<h1>SEND THE VIDEO?</h1><img width="30%" height="20%" src="./img/video.png">
+				</div>
+				<div style="position: absolute; top:80%;left:33%;width: 33%;height: 35%; margin-top: -1.2em;">
+	        		<a id="sendMessage" href="#cuatro" data-role="button" data-icon="check" data-theme="c" data-iconpos="bottom">ACCEPT</a>
+		    	</div>
+		    	<div style="position: absolute; top:80%;left:71%;width: 25%;height: 35%; margin-top: -1.2em;">
+	        		<a href="#tres" data-role="button" data-icon="back" data-theme="e" data-iconpos="bottom">BACK</a>
+		    	</div>
+			</div>		
 		</section>
 	</section>
 </div>
-	<script >
-	
+<div data-role="page" id="cuatro" data-theme="a">
+	<section id="secMyle">
+		<img id="myle" src="./img/myle.png">
+		<section id="bottons">
+			<div id="div3"  align="center">
+				<div id="otherSent" class="photo" data-role="header" data-theme="d"><img style="width: 100%; height: 100%" src="./img/sent.png"></div>
+			</div>
+			<div style="position: absolute; top:80%;left:33%;width: 33%;height: 35%; margin-top: -1.2em;">
+	        		<a onclick=window.location="1.html" data-role="button" data-icon="check" data-theme="e" data-iconpos="bottom">ACCEPT</a>
+		    	</div>
+			
+			
+		</section>
+	</section>
+</div>
+	<script language="JavaScript" type="text/JavaScript">
+		function leerGET(){ 
+			var cadGET = location.search.substr(1,location.search.length); 
+			var aux = cadGET.split("=");
+			return aux[1]; 
+		} 
+		window.onload = function(){
+				var variable = leerGET();
+				if(variable=="friends"){
+					document.getElementById("friends").style.visibility = 'visible';
+					document.getElementById("friends1").style.visibility = 'visible';
+				}
+				else{
+					document.getElementById("doctors").style.visibility = 'visible';
+					document.getElementById("doctors1").style.visibility = 'visible';
+					
+				}
+		}
+		
+		$("#sendMessage").click(function() {
+			$("#dos").hide();
+			$("#cuatro").show();
+			modificarVisibilidad("otherSent");
+		});
+		function irse(){
+			if(leerGET()=="doctors")
+				window.location="videoOptions.html?var=doctors";
+			else
+				window.location="videoOptions.html?var=friends";
+		}
 		$("#botsend").click(function(){
 			$("#div").hide();
+			$("#cuatro").hide();
 			//$("#dos").show();
-		    $("#sent").show(9000);
+		   // $("#sent").show(9000);
 		    //$("#sending").hide(6000);
 		});
+		
+		function modificarVisibilidad(id){
+	with (document.getElementById(id).style){
+		(visibility == "visible")? visibility = "hidden":visibility = "visible";
+	}
+}
 		  
     </script>
 </body>

@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 <head>
@@ -7,7 +8,8 @@
 	<script language="JavaScript" type="text/JavaScript">
 		function leerGET(){ 
 			var cadGET = location.search.substr(1,location.search.length); 
-			return cadGET; 
+			var aux = cadGET.split("=");
+			return aux[1]; 
 		} 
 		
 		function modificarVisibilidad(id){
@@ -15,22 +17,46 @@
 				(visibility == "visible")? visibility = "hidden":visibility = "visible";
 			}
 		}
-		function mostrarCapa(){
-		var variable = leerGET();
-		if(variable=="family")
-			document.getElementById("family").style.visibility = 'visible';
-			document.getElementById("friends").style.visibility = 'hidden';
-		else{
-			document.getElementById("family").style.visibility = 'hidden';
-			document.getElementById("friends").style.visibility = 'visible';
-			}		
+		window.onload = function(){
+				var bot = document.getElementById("botonPhone");
+				bot.style.display = (bot.style.display == 'none') ? 'block' : 'none';
+				var variable = leerGET();
+				if(variable=="friends"){
+					//document.getElementById("doctors").style.visibility = 'hidden';
+					//modificarVisibilidad("friends");
+					//modificarVisibilidad("friends1");
+					document.getElementById("friends").style.visibility = 'visible';
+					//document.getElementById("doctos1").style.visibility = 'hidden';
+					document.getElementById("friends1").style.visibility = 'visible';
+				}
+				else{
+					document.getElementById("doctors").style.visibility = 'visible';
+					document.getElementById("friends").style.visibility = 'hidden';
+					document.getElementById("doctors1").style.visibility = 'visible';
+					document.getElementById("friends1").style.visibility = 'hidden';
+				}
 		}
+		
+		
+		
 		function cambiar(){
 			document.getElementById("botonBack").style.visibility = 'hidden';
 			document.getElementById("botonEnd").style.visibility = 'visible';
 			document.getElementById(7).style.visibility = 'hidden';
 			document.getElementById(6).style.visibility = 'visible';
-}
+		}
+		function irse(){
+			if(leerGET()=="doctors")
+				window.location="doctors.html";
+			else
+				window.location="fFriends.html";
+		}
+		function avanzar(){
+			if(leerGET()=="doctors")
+				window.location="videoOptions.html?var=doctors";
+			else
+				window.location="videoOptions.html?var=friends";
+		}
 
 </script>
 	<style type="text/css">	
@@ -45,6 +71,9 @@
 			left:0;
 			width: 100%; 
 			height: 100%;
+		}
+		.ocultos{
+			visibility:hidden;
 		}
 		#bottons{
 			position: absolute;
@@ -162,7 +191,7 @@
 		
 	</style>
 </head>
-<body onload="mostrarCapa()">
+<body >
 	<section id="secMyle">
 		<img id="myle" src="./img/myle.png">
 		<section id="menu">
@@ -171,26 +200,27 @@
 			<div align="left"><a HREF="phone.html" ><font FACE="arial" SIZE=4 COLOR="077827" >PHONE CALL</font></a></div>
 			<div align="center"><a HREF="lastCalls.html" ><font FACE="arial" SIZE=3 COLOR="077827" >LAST CALLS</font></a></div>
 			<div align="center"><a HREF="agenda.html" ><font FACE="arial" SIZE=2 COLOR="077827" >AGENDA</font></a></div>
-			<div align="right"><a HREF="fFriends.html" ><font FACE="arial" SIZE=1 COLOR="077827" >FOOTBALL FRIENDS</font></a></div>
+			<div align="right" class="ocultos" id="friends1"><a HREF="fFriends.html" ><font FACE="arial" SIZE=1 COLOR="077827" >FOOTBALL FRIENDS</font></a></div>
+			<div align="right" class="ocultos" id="doctors1"><a HREF="doctors.html" ><font FACE="arial" SIZE=1 COLOR="077827" >DOCTORS</font></a></div>
 			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >FREE TIME</font></a></div>
 			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >LENGUAGES</font></a></div>
 			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >OTHER OPTIONS</font></a></div>
 		</section>
 		<section id="submenu">
-			<div align="center" id="friends"><a HREF="fFriends.html" ><font FACE="arial" SIZE=5 COLOR=red style="text-align: center">FOOTBALL FRIENDS</font></a></div>
-			<div align="center" id="family"><a HREF="fFriends.html" ><font FACE="arial" SIZE=5 COLOR=red style="text-align: center">FAMILY</font></a></div>
+			<div align="center" class="ocultos" id="friends"><a HREF="fFriends.html" ><font FACE="arial" SIZE=5 COLOR=red style="text-align: center">FOOTBALL FRIENDS</font></a></div>
+			<div align="center" class="ocultos" id="doctors"><a HREF="doctors.html" ><font FACE="arial" SIZE=5 COLOR=red style="text-align: center">DOCTORS</font></a></div>
 			<BR>
 			<div align="left"><a HREF="" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >RECORD VOICE MSJ. </font></a></div>
-			<div align="left"><a HREF="video.html?friends" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >RECORD VIDEO MSJ. </font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=4 COLOR="077827" >RECORD VIDEO MSJ. </font></a></div>
 			
 		</section>
 		<section id="bottons">
 		<img id="botonPhone" width="100%" height="100%" src="./img/video.png" /> </button>
 		<img id="botonPhone1" width="100%" height="100%" src="./img/cam.png" /> </button>	
-		<button id="3" class="bot" onclick=window.location="videoOptions.html"><img width="100%" height="100%" src="./img/stop.png" /> </button>
+		<button id="3" class="bot" onclick="avanzar()"><img width="100%" height="100%" src="./img/stop.png" /> </button>
 		<button id="2" class="bot" onclick="oculta()"><img width="100%" height="100%" src="./img/rec.png" /> </button>
 		
-		<button id="botonBack" class="button" onclick=window.location="phone.html">BACK<img  width="90%" height="80%" src="./img/back.png " /> </button>
+		<button id="botonBack" class="button" onclick="irse()">BACK<img  width="90%" height="80%" src="./img/back.png " /> </button>
 		</section>
 	</section>
 	
@@ -206,10 +236,7 @@
 				b.style.display = (bot.style.display == 'none') ? 'block' : 'none';
 			}
 		}
-		window.onload = function(){
-				var bot = document.getElementById("botonPhone");
-				bot.style.display = (bot.style.display == 'none') ? 'block' : 'none';
-		}
+		
 		
 	</script>
 	
