@@ -1,82 +1,105 @@
 <!doctype html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html>
 <head>
-  <meta charset="utf-8">
+	<title>MYLE MENU</title>
+	<style type="text/css">
+		/*
+			la diferencia es que si pones lo siguiente en relative apareceria abajo, si lo haces en absolute, es respcto a la pagina
+			
+		*/
+		#myle{
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(149,149,149,1)), color-stop(38%,rgba(13,13,13,1)), color-stop(50%,rgba(1,1,1,1)), color-stop(62%,rgba(10,10,10,1)), color-stop(76%,rgba(78,78,78,1)), color-stop(87%,rgba(56,56,56,1)), color-stop(100%,rgba(27,27,27,1)));
+			position: absolute;
+			top:0;
+			left:0;
+			width: 100%; 
+			height: 100%;
+		}
+		#bottons{
+			position: absolute;
+			top:38%;
+			left:23%;
+			width: 54%; 
+			height: 60%;
+		}
+		#menu{
+			position: absolute;
+			top:38%;
+			left:10%;
+			width: 12%; 
+			height: 20%;
+		}
+		#submenu{
+			position: absolute;
+			top:38%;
+			left:78%;
+			width: 12%; 
+			height: 20%;
+		}
+		.button {
+		   border-top: 1% solid #f5f5f5;
+		   background: #c5ccd1;
+		   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#c5ccd1));
+		   background: -webkit-linear-gradient(top, #3e779d, #c5ccd1);
+		   background: -moz-linear-gradient(top, #3e779d, #c5ccd1);
+		   background: -ms-linear-gradient(top, #3e779d, #c5ccd1);
+		   background: -o-linear-gradient(top, #3e779d, #c5ccd1);
+		   width:49%;
+		   height:49%;
+		   -webkit-border-radius: 40%;
+		   -moz-border-radius: 40%;
+		   border-radius: 40%;
+		   -webkit-box-shadow: rgba(0,0,0,1) 0 1% 0;
+		   -moz-box-shadow: rgba(0,0,0,1) 0 1% 0;
+		   box-shadow: rgba(0,0,0,1) 0 1% 0;
+		   text-shadow: rgba(0,0,0,.4) 0 1% 0;
+		   color: #ffffff;
+		   font-size: 120%;
+		   font-family: Georgia, Serif;
+		   text-decoration: none;
+		   vertical-align: middle;
+		   }
+		.button:hover {
+		   border-top-color: #1b567d;
+		   background: #1b567d;
+		   color: #f013f0;
+		   }
+		.button:active {
+		   border-top-color: #c7e3f5;
+		   background: #c7e3f5;
+		   }
 
-  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
-       More info: h5bp.com/b/378 -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-  <title></title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
-
-  <!-- CSS: implied media=all -->
-  <!-- CSS concatenated and minified via ant build script-->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- end CSS-->
-
-  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
-
-  <!-- All JavaScript at the bottom, except for Modernizr / Respond.
-       Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
-       For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+		/*
+			diferencias entre explorer, opera, mozilla y chrome
+		
+		-ms
+		-o
+		-moz
+		-webkit
+		*/
+		
+		
+	</style>
 </head>
-
 <body>
-
-  <div id="container">
-    <header>
-
-    </header>
-    <div id="main" role="main">
-
-    </div>
-    <footer>
-
-    </footer>
-  </div> <!--! end of #container -->
-
-
-  <!-- JavaScript at the bottom for fast page loading -->
-
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
-
-
-  <!-- scripts concatenated and minified via ant build script-->
-  <script defer src="js/plugins.js"></script>
-  <script defer src="js/script.js"></script>
-  <!-- end scripts-->
-
-	
-  <!-- Change UA-XXXXX-X to be your site's ID -->
-  <script>
-    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
-    Modernizr.load({
-      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-    });
-  </script>
-
-
-  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-       chromium.org/developers/how-tos/chrome-frame-getting-started -->
-  <!--[if lt IE 7 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
-  
+	<section id="secMyle">
+		<img id="myle" src="./img/myle.png">
+		<section id="menu">
+			<div align="center"><a HREF="1.html" ><font FACE="arial" SIZE=5 COLOR=red >MENU</font></a></div>
+			<br>
+			<div align="left"><a HREF="phone.html" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >PHONE CALL</font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >RECIPES</font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >LENGUAGES</font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >OTHER OPTIONS</font></a></div>
+		</section>
+		<section id="bottons">
+		<button class="button" value='PHONE CALL' onclick=window.location="phone.html" >PHONE CALL<img width="80%" height="70%" src="./img/telefono.png" /></button>
+		<button class="button" value='RECIPIES' onclick=window.location="recipes.html" >RECIPES<img width="80%" height="70%" src="./img/receta.png" /> </button>
+		<button class="button" value='ENGLISH' onclick=window.location="lang.html">LANGUAGES<img  width="80%" height="80%" src="./img/globe.png " /> </button>
+			<button id="Other" class="button">OTHER OPTIONS<img  width="80%" height="80%" src="./img/things.png " />
+			</button>
+			
+		</section>
+	</section>
 </body>
 </html>
