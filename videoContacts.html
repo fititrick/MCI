@@ -81,12 +81,12 @@
 		<section id="menu">
 			<div align="center"><a HREF="index.html" ><font FACE="arial" SIZE=5 COLOR=red >MENU</font></a></div>
 			<br>
-			<div align="left"><a HREF="phone.html" ><font FACE="arial" SIZE=4 COLOR="077827" >PHONE CALL</font></a></div>
+			<div align="left"><a HREF="phone.html" ><font FACE="arial" SIZE=4 COLOR="077827" >PHONE MENU</font></a></div>
 			<div align="center"><a HREF="lastCalls.html" ><font FACE="arial" SIZE=3 COLOR="077827" >LAST CALLS</font></a></div>
 			<div align="center"><a HREF="agenda.html" ><font FACE="arial" SIZE=2 COLOR="077827" >AGENDA</font></a></div>
 			<div align="right" class="ocultos" id="friends1"><a HREF="fFriends.html" ><font FACE="arial" SIZE=1 COLOR="077827" >FOOTBALL FRIENDS</font></a></div>
 			<div align="right" class="ocultos" id="doctors1"><a HREF="doctors.html" ><font FACE="arial" SIZE=1 COLOR="077827" >DOCTORS</font></a></div>
-			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >FREE TIME</font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >RECIPES</font></a></div>
 			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >LENGUAGES</font></a></div>
 			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >OTHER OPTIONS</font></a></div>
 		</section>
@@ -174,16 +174,25 @@
 			var aux = cadGET.split("=");
 			return aux[1]; 
 		} 
+		function leerProcedence(){ 
+			var cadGET = location.search.substr(1,location.search.length); 
+			var aux = cadGET.split("=");
+			return aux[2]; 
+		} 
+		function leerTercero(){ 
+			var cadGET = location.search.substr(1,location.search.length); 
+			var aux = cadGET.split("=");
+			return aux[3]; 
+		} 
 		window.onload = function(){
 				var variable = leerGET();
 				if(variable=="friends"){
 					document.getElementById("friends").style.visibility = 'visible';
 					document.getElementById("friends1").style.visibility = 'visible';
 				}
-				else{
+				if(variable=="doctors"){
 					document.getElementById("doctors").style.visibility = 'visible';
 					document.getElementById("doctors1").style.visibility = 'visible';
-					
 				}
 		}
 		
@@ -193,11 +202,15 @@
 			modificarVisibilidad("otherSent");
 		});
 		function irse(){
-			if(leerGET()=="doctors")
-				window.location="videoOptions.html?var=doctors";
-			else
-				window.location="videoOptions.html?var=friends";
+			
+			if(leerGET()=="doctors" || leerGET()=="fFriends")
+				window.location=leerGET()+".html";
+			if(leerProcedence()=="calling"){
+				window.location="calling.html?var="+leerGET()+"="+leerTercero();
+			}
+			
 		}
+		
 		$("#botsend").click(function(){
 			$("#div").hide();
 			$("#cuatro").hide();

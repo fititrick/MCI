@@ -26,7 +26,7 @@
 		.foto{
 			position: absolute;
 			top:0%;
-			left:23%;
+			left:13%;
 			width: 54%; 
 			height: 60%;
 			visibility:hidden;
@@ -107,7 +107,22 @@
 			width: 45%; 
 			height: 35%;
 		}
-		
+		#botMes{
+	        	position: absolute;
+	        	 top:10%;
+	        	left:71%;
+	        	width: 25%;
+	        	height: 25%;
+	        	margin-top: -1.2em;
+	        }
+        #botVid{
+        	position: absolute;
+        	 top:40%;
+        	 left:71%;
+        	 width: 25%;
+        	 height: 25%;
+        	  margin-top: -1.2em;
+        }	
 		/*
 			diferencias entre explorer, opera, mozilla y chrome
 		
@@ -154,16 +169,14 @@ function cambiar(){
 	document.getElementById(10).style.visibility = 'visible';
 }
 function irse(){
-		if(leerProcedence()=="contacts")
-			window.location="contacts.html";
-		if(leerProcedence()=="last")
-			window.location="lastCalls.html";
-		if(leerProcedence()=="friends")
-			window.location="fFriends.html";
-		if(leerProcedence()=="doctors")
-			window.location="doctors.html";
+	if(leerProcedence()=="lastCalls" || leerProcedence()=="contacts" || leerProcedence()=="doctors" || leerProcedence()=="fFriends" )
+				window.location=leerProcedence()+".html";
+	else
+		window.location="contacts.html";
 }
-
+function myFunction(){
+	window.location="video.html?var="+leerGET()+"="+"calling="+leerProcedence();
+}
 
 </script>
 </head>
@@ -200,10 +213,12 @@ function irse(){
 			<H1>CALLING TO NICK?</h1><img width="80%" height="80%" src="./img/contact.png">
 			</div>
 		</div>
+        	<button id="botMes" onclick=window.location="" >Record <br>Voice Msj.<img width="75%" height="65%" src="./img/voiceMsj.png" /></button>
+        	<button id="botVid" onclick="myFunction()">Record <br>Video Msj.<img width="75%" height="65%" src="./img/videoMsj.png" /></button>
 		<button id="10" class="funcion" ><h1>CALLING</h1><img width="50%" height="55%" src="./img/telefono.gif" /></button>
 		<button id="11"class="funcion" onclick="cambiar()"><h1>CALL</h1><img width="50%" height="55%" src="./img/phone.png" /></button>
 		<button id="botonBack" class="button" onclick="irse()">BACK<img  width="90%" height="80%" src="./img/back.png " /> </button>
-		<button id="botonEnd" class="button" onclick="irse()">END PHONE CALL<img  width="90%" height="80%" src="./img/endPhone.png " /> </button>
+		<button id="botonEnd" class="button" onclick="irse()">END PHONE MENU<img  width="90%" height="80%" src="./img/endPhone.png " /> </button>
 		</section>
 	</section>
 </body>

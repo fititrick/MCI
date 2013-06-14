@@ -26,30 +26,61 @@
 		}
 		.i{
 			position: absolute;
-			top:20%;
+			top:15%;
 			left:15%;
 			width: 25%; 
 			height: 25%;
+			opacity: 1;
 		}
 		.c{
 			position: absolute;
-			top:35%;
+			top:25%;
 			left:33%;
 			width: 35%; 
 			height: 35%;
 		}
+		.c:hover {
+			
+			 background-color: #31B404
+		}
 		.d{
 			position: absolute;
-			top:20%;
+			top:15%;
 			left:61%;
 			width: 25%; 
 			height: 25%;
+			opacity: 1;
+		}
+		.i {
+		opacity: 0.3;
+		-webkit-transition: opacity 0.2s ease 0s;
+		-moz-transition: opacity 0.2s ease 0s;
+		}
+		
+		.i:hover {
+		opacity: 1;
+		}
+		.d {
+		opacity: 0.3;
+		-webkit-transition: opacity 0.2s ease 0s;
+		-moz-transition: opacity 0.2s ease 0s;
+		}
+		
+		.d:hover {
+		opacity: 1;
 		}
 		#botonBack{
 			position: absolute;
-			top:73%;
-			left:25%;
-			width: 50%; 
+			top:70%;
+			left:5%;
+			width: 40%; 
+			height: 25%;
+		}
+		#botonAgenda{
+			position: absolute;
+			top:70%;
+			left:55%;
+			width: 40%; 
 			height: 25%;
 		}
 		#menu{
@@ -139,26 +170,27 @@
 		<section id="menu">
 			<div align="center"><a HREF="index.html" ><font FACE="arial" SIZE=5 COLOR=red >MENU</font></a></div>
 			<br>
-			<div align="left"><a HREF="phone.html" ><font FACE="arial" SIZE=4 COLOR="077827" >PHONE CALL</font></a></div>
-			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >FREE TIME</font></a></div>
+			<div align="left"><a HREF="phone.html" ><font FACE="arial" SIZE=4 COLOR="077827" >PHONE MENU</font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >RECIPES</font></a></div>
 			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >LENGUAGES</font></a></div>
 			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >OTHER OPTIONS</font></a></div>
 		</section>
 		<section id="submenu">
-			<div align="center"><a HREF="index.html" ><font FACE="arial" SIZE=5 COLOR=red style="text-align: center">PHONE CALL</font></a></div>
+			<div align="center"><a HREF="index.html" ><font FACE="arial" SIZE=5 COLOR=red style="text-align: center">PHONE<br>MENU</font></a></div>
 			<BR>
 			<div align="left"><a HREF="emergency.html" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >EMERGENCY</font></a></div>
 			<div align="left"><a HREF="" ><font FACE="arial" SIZE=4 COLOR="077827" >PHONE A PERSON</font></a></div>
 			<div align="left"><a HREF="lastCalls.html" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >LAST CALLS</font></a></div>
 		</section>
 		<section id="bottons">
+		<div align="center"><font FACE="arial" SIZE=5 COLOR=white >MOST RECENT CONTACTS</font></div>	
 		<button id="5" class="d" onclick="CambiaFicha(5)">XIAOMEI <img width="80%" height="70%" src="./img/china.jpg" /></button>
 		<button id="4" class="d" onclick="CambiaFicha(4)">THE PETERSON <img width="80%" height="70%" src="./img/others.png" /></button>
-	    <button id="1" class="i" onclick="CambiaFicha(1)" >EVA   <img width="80%" height="70%" src="./img/eva.png" /></button>
-		<button id="3" class="d" onclick="CambiaFicha(3)">OTTO   <img width="80%" height="70%" src="./img/otto.png" /></button>
-		<button id="2" class="c" onclick="CambiaFicha(2)">Robert <img width="80%" height="70%" src="./img/old man.jpg" /></button>
-		
-		<button id="botonBack" class="button" onclick=window.location="phone.html">BACK<img  width="90%" height="80%" src="./img/back.png " /> </button>
+	    <button id="1" class="i" onclick="CambiaFicha(1)" >EVA<br><img width="80%" height="70%" src="./img/eva.png" /></button>
+		<button id="3" class="d" onclick="CambiaFicha(3)">OTTO<br><img width="80%" height="70%" src="./img/otto.png" /></button>
+		<button id="2" class="c" onclick="CambiaFicha(2)">Robert<br><img width="80%" height="70%" src="./img/old man.jpg" /></button>
+	    <button id="botonAgenda" class="button" onclick=window.location="agenda.html?var=contacts"><font FACE="arial" SIZE=2 COLOR=white >OTHER CONTACTS - OPEN AGENDA<br></font><img  width="40%" height="65%" src="./img/agenda.png" /> </button>
+		<button id="botonBack" class="button" onclick=window.location="phone.html">BACK<img  width="90%" height="70%" src="./img/back.png " /> </button>
 		</section>
 	</section>
 	

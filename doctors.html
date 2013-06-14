@@ -124,13 +124,13 @@
 	<section id="secMyle">
 		<img id="myle" src="./img/myle.png">
 		<section id="menu">
-			<div align="center"><a HREF="index.html" ><font FACE="arial" SIZE=5 COLOR=red >MENU</font></a></div>
+			<div align="center"><a onclick=window.location="index.html" HREF="index.html" ><font FACE="arial" SIZE=5 COLOR=red >MENU</font></a></div>
 			<br>
-			<div align="left"><a HREF="phone.html" ><font FACE="arial" SIZE=4 COLOR="077827" >PHONE CALL</font></a></div>
-			<div align="center"><a HREF="lastCalls.html" ><font FACE="arial" SIZE=3 COLOR="077827" >LAST CALLS</font></a></div>
-			<div align="center"><a HREF="agenda.html" ><font FACE="arial" SIZE=2 COLOR="077827" >AGENDA</font></a></div>
-			<div align="center"><a HREF="fFriends.html" ><font FACE="arial" SIZE=1 COLOR="077827" >DOCTORS</font></a></div>
-			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >FREE TIME</font></a></div>
+			<div align="left"><a onclick=window.location="phone.html" HREF="phone.html" ><font FACE="arial" SIZE=4 COLOR="077827" >PHONE MENU</font></a></div>
+			<div align="center"><a onclick=window.location="lastCalls.html" HREF="lastCalls.html" ><font FACE="arial" SIZE=3 COLOR="077827" >LAST CALLS</font></a></div>
+			<div align="center"><a onclick=window.location="agenda.html" HREF="agenda.html" ><font FACE="arial" SIZE=2 COLOR="077827" >AGENDA</font></a></div>
+			<div align="center"><a onclick=window.location="fFriends.html" HREF="fFriends.html" ><font FACE="arial" SIZE=1 COLOR="077827" >DOCTORS</font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >RECIPES</font></a></div>
 			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >LENGUAGES</font></a></div>
 			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >OTHER OPTIONS</font></a></div>
 		</section>
@@ -138,23 +138,26 @@
 			<div align="center"><a HREF="doctors.html" ><font FACE="arial" SIZE=5 COLOR=red style="text-align: center">DOCTORS</font></a></div>
 			<BR>
 			<div align="left"><a HREF="" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >RECORD VOICE MSJ. </font></a></div>
-			<div align="left"><a HREF="video.html?var=doctors" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >RECORD VIDEO MSJ. </font></a></div>
+			<div align="left"><a onclick=window.location="video.html?var=doctors" HREF="video.html?var=doctors" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >RECORD VIDEO MSJ. </font></a></div>
 			
 		</section>
 		<section id="bottons">
 			<li id="last" data-role="fieldcontain">
 	        		 <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="a">
-						<li data-role="list-divider">DOCTORS</li>
+						<li data-role="list-divider">CALL DOCTORS</li>
 						<li><a onclick=window.location="calling.html?param=6=doctors"> <img src="./img/contact.png"> MARK</a></li>
 						<li><a onclick=window.location="calling.html?param=7=doctors"> <img src="./img/contact.png"> CONSTANTIN</a></li>
 						<li><a onclick=window.location="calling.html?param=8=doctors"> <img src="./img/contact.png"> CHRISTIAN</a></li>
 						<li><a onclick=window.location="calling.html?param=9=doctors"> <img src="./img/contact.png"> NICK</a></li>
 			    	 </ul>
 			</li>
-	        <div style="position: absolute; top:10%;left:71%;width: 25%;height: 55%; margin-top: -1.2em;">
+			<div style="position: absolute; top:8%;left:74%;width: 25%;height: 55%; margin-top: -1.2em;">
+	        	<a data-role="header" >OTHER OPTIONS</a>
+	        </div>
+	        <div style="position: absolute; top:15%;left:71%;width: 25%;height: 55%; margin-top: -1.2em;">
 	        	<a onclick=window.location="" data-role="button" data-icon="search" data-iconpos="bottom">Record <br>Voice Msj.</a>
 	        </div>
-	        <div style="position: absolute; top:40%;left:71%;width: 25%;height: 55%; margin-top: -1.2em;">
+	        <div style="position: absolute; top:43%;left:71%;width: 25%;height: 55%; margin-top: -1.2em;">
 	        	<a onclick=window.location="video.html?var=doctors" data-role="button" data-icon="search" data-iconpos="bottom">Record <br>Video Msj.</a>
 	        </div>		
 	        <div style="position: absolute; top:80%;left:71%;width: 25%;height: 35%; margin-top: -1.2em;">

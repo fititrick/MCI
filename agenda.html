@@ -81,6 +81,20 @@
 		
 		
 	</style>
+	<script language="JavaScript" type="text/JavaScript">
+	function leerGET(){ 
+			var cadGET = location.search.substr(1,location.search.length); 
+			var aux = cadGET.split("=");
+			if(typeof aux[1] == 'undefined'){
+				window.location="lastCalls.html"
+			}
+			else{
+				window.location="contacts.html"
+			}
+				
+			return aux[1]; 
+		} 
+	</script>
 </head>
 <body>
 	<section id="secMyle">
@@ -88,10 +102,9 @@
 		<section id="menu">
 			<div align="center"><a HREF="index.html" ><font FACE="arial" SIZE=5 COLOR=red >MENU</font></a></div>
 			<br>
-			<div align="left"><a HREF="phone.html" ><font FACE="arial" SIZE=4 COLOR="077827" >PHONE CALL</font></a></div>
-			<div align="center"><a HREF="lastCalls.html" ><font FACE="arial" SIZE=3 COLOR="077827" >LAST CALLS</font></a></div>
-			<div align="center"><a HREF="agenda.html" ><font FACE="arial" SIZE=2 COLOR="077827" >AGENDA</font></a></div>
-			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >FREE TIME</font></a></div>
+			<div align="left"><a HREF="phone.html" ><font FACE="arial" SIZE=4 COLOR="077827" >PHONE MENU</font></a></div>
+			<div align="center"><a HREF="agenda.html" ><font FACE="arial" SIZE=3 COLOR="077827" >AGENDA</font></a></div>
+			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >RECIPES</font></a></div>
 			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >LENGUAGES</font></a></div>
 			<div align="left"><a HREF="" ><font FACE="arial" SIZE=2 COLOR="DCE2DE" >OTHER OPTIONS</font></a></div>
 		</section>
@@ -107,7 +120,7 @@
 		<button class="button" onclick=window.location="" >FAMILY<img width="80%" height="65%" src="./img/family.png" /></button>
 		<button class="button" onclick=window.location="doctors.html">DOCTORS<img width="80%" height="70%" src="./img/doctor.png" /> </button>
 		<button class="button" onclick=window.location="fFriends.html">FOOTBALL FRIENDS<img  width="80%" height="80%" src="./img/football.png " /> </button>
-		<button class="button" onclick=window.location="lastCalls.html">BACK<img  width="90%" height="80%" src="./img/back.png " /> </button>
+		<button class="button" onclick="leerGET()">BACK<img  width="90%" height="80%" src="./img/back.png " /> </button>
 		</section>
 	</section>
 </body>
