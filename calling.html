@@ -156,8 +156,8 @@ var variable = leerGET();
 document.getElementById(variable).style.visibility = 'visible';
 
 
-document.getElementById(10).style.visibility = 'hidden';
-document.getElementById(11).style.visibility = 'visible';
+document.getElementById(14).style.visibility = 'hidden';
+document.getElementById(15).style.visibility = 'visible';
 document.getElementById("botonBack").style.visibility = 'visible';
 document.getElementById("botonEnd").style.visibility = 'hidden';
 
@@ -165,8 +165,8 @@ document.getElementById("botonEnd").style.visibility = 'hidden';
 function cambiar(){
 	document.getElementById("botonBack").style.visibility = 'hidden';
 	document.getElementById("botonEnd").style.visibility = 'visible';
-	document.getElementById(11).style.visibility = 'hidden';
-	document.getElementById(10).style.visibility = 'visible';
+	document.getElementById(15).style.visibility = 'hidden';
+	document.getElementById(14).style.visibility = 'visible';
 }
 function irse(){
 	if(leerProcedence()=="lastCalls" || leerProcedence()=="contacts" || leerProcedence()=="doctors" || leerProcedence()=="fFriends" )
@@ -212,11 +212,23 @@ function myFunction(){
 			<div id="9" class="foto">
 			<H1>CALLING TO NICK?</h1><img width="80%" height="80%" src="./img/contact.png">
 			</div>
+			<div id="10" class="foto">
+			<H1>CALLING TO ALLERGIST?</h1><img width="80%" height="80%" src="./img/contact.png">
+			</div>
+			<div id="11" class="foto">
+			<H1>CALLING TO DENTIST?</h1><img width="80%" height="80%" src="./img/contact.png">
+			</div>
+			<div id="12" class="foto">
+			<H1>CALLING TO ONCOLOGIST?</h1><img width="80%" height="80%" src="./img/contact.png">
+			</div>
+			<div id="13" class="foto">
+			<H1>CALLING TO FAMILY PRACTITIONER?</h1><img width="80%" height="80%" src="./img/contact.png">
+			</div>
 		</div>
         	<button id="botMes" onclick=window.location="" >Record <br>Voice Msj.<img width="75%" height="65%" src="./img/voiceMsj.png" /></button>
         	<button id="botVid" onclick="myFunction()">Record <br>Video Msj.<img width="75%" height="65%" src="./img/videoMsj.png" /></button>
-		<button id="10" class="funcion" ><h1>CALLING</h1><img width="50%" height="55%" src="./img/telefono.gif" /></button>
-		<button id="11"class="funcion" onclick="cambiar()"><h1>CALL</h1><img width="50%" height="55%" src="./img/phone.png" /></button>
+		<button id="14" class="funcion" ><h1>CALLING</h1><img width="50%" height="55%" src="./img/telefono.gif" /></button>
+		<button id="15"class="funcion" onclick="cambiar()"><h1>CALL</h1><img width="50%" height="55%" src="./img/phone.png" /></button>
 		<button id="botonBack" class="button" onclick="irse()">BACK<img  width="90%" height="80%" src="./img/back.png " /> </button>
 		<button id="botonEnd" class="button" onclick="irse()">END PHONE MENU<img  width="90%" height="80%" src="./img/endPhone.png " /> </button>
 		</section>

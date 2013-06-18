@@ -180,6 +180,19 @@
 					<div id="9" class="foto">
 						<H1>SEND TO NICK?</h1><img width="80%" height="80%" src="./img/contact.png">
 					</div>
+					</div>
+					<div id="10" class="foto">
+					<H1>SEND TO ALLERGIST?</h1><img width="80%" height="80%" src="./img/contact.png">
+					</div>
+					<div id="11" class="foto">
+					<H1>SEND TO DENTIST?</h1><img width="80%" height="80%" src="./img/contact.png">
+					</div>
+					<div id="12" class="foto">
+					<H1>SEND TO ONCOLOGIST?</h1><img width="80%" height="80%" src="./img/contact.png">
+					</div>
+					<div id="13" class="foto">
+					<H1>SEND TO FAMILY PRACTITIONER?</h1><img width="80%" height="80%" src="./img/contact.png">
+					</div>
 				</div>
 			
 	        		
@@ -244,19 +257,28 @@
 			return aux[3]; 
 		} 
 		window.onload = function(){
-				var variable = leerGET();				
+				var variable = leerGET();
+				var var2=leerTercero();				
 				if(variable=="fFriends"){
 					document.getElementById("friends").style.visibility = 'visible';
 					document.getElementById("friends1").style.visibility = 'visible';
 					document.getElementById("lfriends").style.visibility = 'visible';
 				}
-				else if(variable=="doctors"){
-					document.getElementById("doctors").style.visibility = 'visible';
+				else if(variable=="doctors" ){
+					document.getElementById ("doctors").style.visibility = 'visible';
 					document.getElementById("doctors1").style.visibility = 'visible';
 					document.getElementById("ldoctors").style.visibility = 'visible';
 				}
-				else 
-					document.getElementById(variable).style.visibility = 'visible';
+				else if(var2 =="fFriends"){
+					document.getElementById("friends").style.visibility = 'visible';
+					document.getElementById("friends1").style.visibility = 'visible';
+					}
+					if(var2 =="doctors"){
+						document.getElementById ("doctors").style.visibility = 'visible';
+						document.getElementById("doctors1").style.visibility = 'visible';
+					}
+				document.getElementById(variable).style.visibility = 'visible';
+					
 				$("#dos").hide();
 				$("#cuatro").hide();
 		}
