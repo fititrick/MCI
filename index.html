@@ -24,10 +24,19 @@
 		}
 		#menu{
 			position: absolute;
-			top:38%;
-			left:10%;
-			width: 12%; 
-			height: 20%;
+			top:37%;
+			left:5%;
+			width: 15.3%; 
+			height: 56.5%;
+			background: #efefef; 
+			background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
+			background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+			background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+			box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+			padding: 0 20px;
+			border-radius: 10px;  
+			list-style: none;
+			display: inline-table;
 		}
 		#submenu{
 			position: absolute;
@@ -68,7 +77,7 @@
 		   border-top-color: #c7e3f5;
 		   background: #c7e3f5;
 		   }
-
+			
 		/*
 			diferencias entre explorer, opera, mozilla y chrome
 		
@@ -85,18 +94,27 @@
 	<section id="secMyle">
 		<img id="myle" src="./img/myle.png">
 		<section id="menu">
-			<div align="center"><a HREF="index.html" ><font FACE="arial" SIZE=5 COLOR=red >MENU</font></a></div>
-			<br>
-			<div align="left"><a HREF="phone.html" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >PHONE MENU</font></a></div>
-			<div align="left"><a HREF="" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >RECIPES</font></a></div>
-			<div align="left"><a HREF="" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >LENGUAGES</font></a></div>
-			<div align="left"><a HREF="" ><font FACE="arial" SIZE=3 COLOR="DCE2DE" >OTHER OPTIONS</font></a></div>
+			<nav>
+				<ul>
+					<li> <a HREF="index.html" ><font FACE="arial" SIZE=6 COLOR=red >MENU</font></a></li>
+					<li> <a HREF="phone.html" ><font FACE="arial" SIZE=4 COLOR="000000" >PHONE MENU</font></a>
+						
+					</li>
+					<li> <a HREF="" ><font FACE="arial" SIZE=4 COLOR="000000" >RECIPES</font></a>
+						
+					</li>
+					<li> <a HREF="" ><font FACE="arial" SIZE=4 COLOR="000000" >LENGUAGES</font></a>
+					<li> <a HREF="" ><font FACE="arial" SIZE=4 COLOR="000000" >OTHER OPTIONS</font></a>
+				</ul>
+			</nav>
+			
+			
 		</section>
 		<section id="bottons">
-		<button class="button" value='PHONE CALL' onclick=window.location="phone.html" >PHONE MENU<img width="80%" height="70%" src="./img/telefono.png" /></button>
-		<button class="button" value='RECIPIES' onclick=window.location="recipes.html" >RECIPES<img width="80%" height="70%" src="./img/receta.png" /> </button>
-		<button class="button" value='ENGLISH' onclick=window.location="lang.html">LANGUAGES<img  width="80%" height="80%" src="./img/globe.png " /> </button>
-			<button id="Other" class="button">OTHER OPTIONS<img  width="80%" height="80%" src="./img/things.png " />
+		<button class="button" value='PHONE CALL' onclick=window.location="phone.html" ><font FACE="arial" SIZE=6 COLOR="WHITE" >PHONE MENU</font><img width="65%" height="65%" src="./img/telefono.png" /></button>
+		<button class="button" value='RECIPIES' onclick=window.location="recipes.html" ><font FACE="arial" SIZE=6 COLOR="WHITE" >RECIPES<br> </font><img width="55%" height="55%" src="./img/receta.png" /> </button>
+		<button class="button" value='ENGLISH' onclick=window.location="lang.html"><font FACE="arial" SIZE=6 COLOR="WHITE" >LANGUAGES</font><img  width="50%" height="55%" src="./img/globe.png " /> </button>
+			<button id="Other" class="button"><font FACE="arial" SIZE=6 COLOR="WHITE" >OTHER OPTIONS</font><img  width="50%" height="50%" src="./img/things.png " />
 			</button>
 			
 		</section>
